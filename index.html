@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje a México</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(139, 0, 0, 0.7), rgba(139, 0, 0, 0.7)), url('https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .culture-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .map-container {
+            height: 500px;
+            width: 100%;
+        }
+        
+        .music-player {
+            transition: all 0.3s ease;
+        }
+        
+        .music-player:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .flag-stripe {
+            height: 33.33%;
+        }
+        
+        .flag-green {
+            background-color: #006847;
+        }
+        
+        .flag-white {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flag-red {
+            background-color: #CE1126;
+        }
+        
+        .flag-emblem {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-red-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="flag-container h-6 overflow-hidden rounded-sm">
+                    <div class="flag-stripe flag-green"></div>
+                    <div class="flag-stripe flag-white">
+                    </div>
+                    <div class="flag-stripe flag-red"></div>
+                </div>
+                <a href="#" class="text-xl font-bold">Viaje a México</a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link px-2 py-1">Inicio</a>
+                <a href="#destinations" class="nav-link px-2 py-1">Destinos</a>
+                <a href="#culture" class="nav-link px-2 py-1">Cultura</a>
+                <a href="#clothes" class="nav-link px-2 py-1">Ropa Tradicional</a>
+                <a href="#music" class="nav-link px-2 py-1">Música</a>
+                <a href="#map" class="nav-link px-2 py-1">Mapa</a>
+                <a href="#gallery" class="nav-link px-2 py-1">Galería</a>
+            </div>
+            
+            <button class="md:hidden text-xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Descubre la Magia de México</h1>
+            <p class="text-xl md:text-2xl mb-8">Explora ruinas antiguas, ciudades vibrantes y playas impresionantes con nuestros guías expertos</p>
+            <div class="flex justify-center">
+                <a href="#destinations" class="border-2 border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-red-900 transition duration-300">Más Información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="py-16 bg-red-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Destinos Populares</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Destination 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.shutterstock.com/image-photo/aerial-panoramic-view-northern-peninsula-600nw-2524220953.jpg" alt="Cancun" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Cancun</h3>
+                        <p class="text-gray-700">Famoso por sus impresionantes playas, vibrante vida nocturna y lujosos resorts a lo largo de la costa del Caribe.</p>
+                    </div>
+                </div>
+                
+                <!-- Destination 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.shutterstock.com/image-photo/guadalajara-skyline-mexico-residential-business-600nw-2512844389.jpg" alt="Mexico City" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Mexico City</h3>
+                        <p class="text-gray-700">Una bulliciosa metrópolis con rica historia, museos de clase mundial y una increíble gastronomía.</p>
+                    </div>
+                </div>
+                
+                <!-- Destination 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.shutterstock.com/image-photo/beautiful-caribbean-landscape-photo-mayan-600nw-2633238331.jpg" alt="Tulum" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Tulum</h3>
+                        <p class="text-gray-700">Pueblo playero bohemio con ruinas mayas que dominan aguas turquesas y eco-hoteles de moda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Cultura Mexicana</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="culture-card bg-blue-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Día de los Muertos</h3>
+                    <img src="https://www.shutterstock.com/image-photo/family-celebrating-mexican-holiday-together-600nw-2388805309.jpg" alt="Day of the Dead" class="w-full h-48 object-cover rounded mb-4">
+                    <p class="text-gray-700 mb-4">El Día de los Muertos es una festividad mexicana que se celebra en todo México, especialmente en las regiones central y sur, y entre las personas de ascendencia mexicana que viven en otros lugares. Esta festividad, que dura varios días, consiste en una reunión de familiares y amigos para rezar y recordar a los amigos y familiares fallecidos, y ayudarles en su viaje espiritual.</p>
+                    <p class="text-gray-700">Las tradiciones relacionadas con esta festividad incluyen la construcción de altares privados llamados ofrendas, honrar a los difuntos con calaveras, caléndulas aztecas y las comidas y bebidas favoritas de los fallecidos, y visitar las tumbas con estos obsequios. La celebración no es sombría, sino festiva, ya que se cree que los muertos se sentirían insultados por el luto o la tristeza.</p>
+                </div>
+                
+                <div class="culture-card bg-blue-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Música Mariachi</h3>
+                    <img src="https://www.shutterstock.com/image-photo/mexican-musicians-mariachi-band-give-600nw-1449560675.jpg" alt="Mariachi" class="w-full h-48 object-cover rounded mb-4">
+                    <p class="text-gray-700 mb-4">El mariachi es un género musical regional mexicano que se remonta al menos al siglo XVIII y que ha evolucionado con el tiempo en las zonas rurales de varias regiones del oeste de México. Hoy en día, un grupo de mariachis suele estar formado por hasta ocho violines, dos trompetas y al menos una guitarra, incluyendo una vihuela de tono agudo y un bajo acústico llamado guitarrón, y todos los músicos se turnan para cantar como solistas y hacer coros.</p>
+                    <p class="text-gray-700">La música mariachi está profundamente ligada a la identidad mexicana y se toca en eventos y celebraciones importantes. El traje tradicional de charro, con sus elaborados bordados y sombreros de ala ancha, es tan emblemático como la propia música.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="culture-card bg-blue-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Cocina Mexicana</h3>
+                    <img src="https://www.shutterstock.com/image-photo/mexican-tacos-meat-beans-salsa-600nw-312234140.jpg" alt="Mexican food" class="w-full h-48 object-cover rounded mb-4">
+                    <p class="text-gray-700 mb-4">La cocina mexicana es una cocina compleja y antigua, con técnicas y habilidades desarrolladas a lo largo de miles de años de historia. Se elabora principalmente con ingredientes autóctonos de México, así como con aquellos traídos por los conquistadores españoles, con algunas influencias nuevas desde entonces. La comida mexicana varía según la región, debido al clima y la geografía locales y a las diferencias étnicas entre los habitantes indígenas, y porque estas diferentes poblaciones fueron influenciadas por los españoles en distintos grados.</p>
+                    <p class="text-gray-700">Los alimentos básicos de la cocina mexicana son típicamente el maíz y los frijoles. El maíz se utiliza para hacer masa, una masa para tamales, tortillas, gorditas y muchos otros alimentos a base de maíz. Los chiles son otro alimento básico importante de la cocina mexicana.</p>
+                </div>
+                
+                <div class="culture-card bg-blue-50 rounded-lg p-6 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Ancient Civilizations</h3>
+                    <img src="https://www.shutterstock.com/image-photo/aerial-view-ancient-mayan-city-600nw-2122199747.jpg" alt="Chichen Itza" class="w-full h-48 object-cover rounded mb-4">
+                    <p class="text-gray-700 mb-4">México fue el hogar de varias civilizaciones avanzadas, entre ellas los olmecas (1500-400 a. C.), que posiblemente crearon el primer sistema de escritura del hemisferio occidental; los mayas (250-900 d. C.), con sus sofisticados sistemas calendáricos y matemáticos; y los aztecas (1300-1521 d. C.), que construyeron la gran ciudad de Tenochtitlán (la actual Ciudad de México). Estas civilizaciones construyeron ciudades impresionantes y crearon obras de arte notables, al tiempo que realizaron importantes contribuciones en matemáticas, astronomía, medicina y otros campos.</p>
+                    <p class="text-gray-700">La civilización maya destacó especialmente por su escritura jeroglífica, el sistema de escritura más sofisticado y desarrollado de la América precolombina, así como por su arte, arquitectura, matemáticas, calendario y sistema astronómico. El imperio azteca estaba en su apogeo cuando llegaron los conquistadores españoles en 1519, liderados por Hernán Cortés. La conquista española del Imperio azteca (1519-1521) fue uno de los acontecimientos más significativos de la historia mundial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Clothes Section -->
+    <section id="clothes" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Ropa Tradicional Mexicana</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Charro Suit -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.shutterstock.com/image-photo/mexican-charro-hat-multicolored-serape-600nw-2464941015.jpg" alt="Charro suit" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Traje de Charro</h3>
+                        <p class="text-gray-700 mb-4">El traje de charro es la vestimenta tradicional de los jinetes mexicanos, especialmente asociado con los mariachis. Incluye un sombrero de ala ancha, chaqueta corta con bordados elaborados, pantalón ajustado y botones decorativos.</p>
+                    </div>
+                </div>
+                
+                <!-- Huipil -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.shutterstock.com/image-photo/mexican-girl-traditional-dress-state-600nw-2134226977.jpg" alt="Huipil" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Huipil</h3>
+                        <p class="text-gray-700 mb-4">El huipil es una blusa o vestido bordado a mano usado por mujeres indígenas en muchas regiones de México. Cada comunidad tiene sus propios diseños y técnicas de bordado que representan su identidad cultural y cosmovisión.</p>
+                    </div>
+                </div>
+                
+                <!-- Jalisco Dress -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://www.shutterstock.com/image-photo/woman-red-dress-dancing-green-600nw-2580202593.jpg" alt="Jalisco dress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Traje de Jalisco</h3>
+                        <p class="text-gray-700 mb-4">El traje típico de Jalisco, conocido como "vestido de china poblana" para mujeres y "traje de charro" para hombres, es uno de los más reconocidos internacionalmente. El vestido femenino incluye falda amplia con listones de colores y blusa bordada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Música Mexicana</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Music 1 -->
+                <div class="music-player bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Mariachi Vargas - El Son de la Negra</h3>
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe class="w-full h-48" src="https://www.youtube.com/embed/XTwmQ-R7Joc?si=USimhWY9X2sCwbq2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-700">"El Son de la Negra" es una de las canciones mexicanas más famosas, a menudo considerada como el segundo himno nacional de México. Interpretada por Mariachi Vargas, el grupo de mariachis más famoso del mundo.</p>
+                </div>
+                
+                <!-- Music 2 -->
+                <div class="music-player bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Lila Downs - La Cumbia del Mole</h3>
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe class="w-full h-48" src="https://www.youtube.com/embed/8_qakIoYmso?si=6MGsKJWwXM23ESRP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-700">Lila Downs fusiona la música tradicional mexicana con estilos contemporáneos. Esta canción rinde homenaje al mole, una de las salsas más complejas y apreciadas de México, a través de un contagioso ritmo de cumbia.</p>
+                </div>
+                
+                <!-- Music 3 -->
+                <div class="music-player bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Natalia Lafourcade - Hasta la Raíz</h3>
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <iframe class="w-full h-48" src="https://www.youtube.com/embed/IKmPci5VXz0?si=TC2E45dKtE7H5VUK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-gray-700">Esta canción ganadora de un Grammy de Natalia Lafourcade representa la nueva ola de la música mexicana que honra la tradición al tiempo que crea sonidos frescos."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Explora México</h2>
+            
+            <div class="map-container rounded-lg shadow-xl overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15007924.486653002!2d-111.6552737087345!3d23.28404804186585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2sus!4v1689871041031!5m2!1ses!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Geografía</h3>
+                    <p class="text-gray-700">México se encuentra en la parte sur de América del Norte. Limita al norte con Estados Unidos. Al sur y al oeste con el océano Pacífico. Al sureste con Guatemala, Belice y el mar Caribe. Y al este con el golfo de México. Con una superficie de casi 2 millones de kilómetros cuadrados, México es el decimotercer país más grande del mundo en extensión.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Clima</h3>
+                    <p class="text-gray-700">El trópico de Cáncer divide el país en zonas templadas y tropicales. Las tierras al norte del paralelo experimentan temperaturas más frías durante los meses de invierno. Al sur del paralelo, las temperaturas son bastante constantes durante todo el año y varían únicamente en función de la altitud. México tiene muchas zonas climáticas diferentes, incluyendo desiertos, selvas tropicales, tierras altas frescas y montañas cubiertas de nieve.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Biodiversidad</h3>
+                    <p class="text-gray-700">México ocupa el cuarto lugar en el mundo en biodiversidad y es uno de los 17 países megadiversos. Con más de 200 000 especies diferentes, México alberga entre el 10 % y el 12 % de la biodiversidad mundial. México ocupa el primer lugar en biodiversidad de reptiles con 707 especies conocidas, el segundo en mamíferos con 438 especies, el cuarto en anfibios con 290 especies y el cuarto en flora, con 26 000 especies diferentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">México en Imágenes</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img src="https://www.shutterstock.com/image-photo/callejon-de-los-sapos-puebla-600nw-510095692.jpg" alt="Mexican street" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/traditional-mexican-food-nachos-salsa-600nw-2502777515.jpg" alt="Mexican food" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/playa-del-carmen-26-march-600nw-2289447301.jpg" alt="Mexican beach" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/pyramids-sun-moon-on-avenue-600nw-142198993.jpg" alt="Mexican pyramid" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/mexican-beach-village-boca-de-600nw-2439625909.jpg" alt="Mexican beach" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/sandwich-stand-guadalajara-mexico-fast-600nw-2435308767.jpg" alt="Mexican market" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/zocalo-square-mexico-city-cathedral-600nw-1323912815.jpg" alt="Mexican church" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="https://www.shutterstock.com/image-photo/10-11-2024-bernal-queretaro-600nw-2628791217.jpg" alt="Mexican festival" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-red-950 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        </div>
+                        <span class="font-bold">Viaje a México</span>
+                    </div>
+                </div>
+                <div class="text-sm text-center md:text-right">
+                    <p>Sitio creado por Arthur, Gabriel Martins, Ricardo y Thiago.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const navLinks = document.querySelector('.md\\:flex.space-x-8');
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('right-0');
+            navLinks.classList.toggle('bg-blue-900');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('space-x-8');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const navLinks = document.querySelector('.md\\:flex.space-x-8');
+                if (!navLinks.classList.contains('hidden')) {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex');
+                    navLinks.classList.remove('flex-col');
+                    navLinks.classList.remove('absolute');
+                    navLinks.classList.remove('top-16');
+                    navLinks.classList.remove('left-0');
+                    navLinks.classList.remove('right-0');
+                    navLinks.classList.remove('bg-blue-900');
+                    navLinks.classList.remove('p-4');
+                    navLinks.classList.remove('space-y-4');
+                    navLinks.classList.add('space-x-8');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
